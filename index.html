@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Javascript</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+    />
+    <meta property="twitter:title" content="Belajar Javascript" />
+    <meta
+      property="twitter:description"
+      content="Belajar Javascript dengan M.Fathin Halim! (bisa koreksi kalau ada yang salah :D)"
+    />
+    <meta
+      property="twitter:image"
+      content="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+    />
+    <style>
+      :root {
+        --text: #eff2e9;
+        --background: #121212;
+        --primary: #dde2d4;
+        --secondary: #323330;
+        --accent: #f0db4f;
+      }
+      #cursor {
+        background-color: white;
+        height: 300px;
+        pointer-events: none;
+
+        aspect-ratio: 1;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+        translate: -50% -50%;
+        border-radius: 50%;
+        background: linear-gradient(to right, var(--accent), var(--secondary));
+        animation: rotate 20s infinite;
+        backdrop-filter: blur(150px);
+        opacity: 0.6;
+        filter: blur(140px);
+      }
+      @media only screen and (min-width: 1041px) {
+        .container {
+          padding: 115px;
+        }
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--text) !important;
+        font-size: larger;
+      }
+      .bg-dark {
+        background-color: var(--secondary) !important;
+      }
+      .yellow-text,
+      a {
+        color: var(--accent) !important;
+        font-weight: bold;
+      }
+      .text-white {
+        font-weight: bold;
+      }
+
+      .yellow-bg,
+      .btn-primary {
+        background-color: var(--accent);
+        border: none;
+        color: black !important;
+      }
+      .btn-primary:hover {
+        background-color: #c6b43e;
+      }
+      .display-3 {
+        font-weight: bold;
+      }
+      img {
+        border-radius: 24px;
+      }
+      pre {
+        border: 1px solid var(--primary);
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .bg-black {
+        background: rgba(0, 0, 0, 0.49) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+        backdrop-filter: blur(7px) !important;
+        -webkit-backdrop-filter: blur(7px) !important;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      h1 {
+        font-size: 50px !important;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <span
+      class="cursor"
+      id="cursor"
+      style="
+        left: 953px;
+        top: 939px;
+        height: 300px !important;
+        width: 300px !important;
+      "
+    ></span>
+    <nav
+      id="nav"
+      class="navbar d-flex justify-content-center text-white p-3 sticky-top text-center"
+    >
+      <div class="text-center">
+        <span class="navbar-brand mb-0 h1 bold text-white text-center"
+          >Javascript with
+          <a href="https://www.fathin.my.id" class="yellow-text"
+            >M.Fathin Halim</a
+          ></span
+        >
+      </div>
+    </nav>
+    <div class="container pt-3">
+      <header>
+        <div class="jumbotron">
+          <div class="row gy-5 pt-4 d-block d-lg-flex">
+            <div class="col-sm-8">
+              <h1>Hello, world!</h1>
+              <h2 class="yellow-text">Marilah Kita Senggol Javascript!</h2>
+              <h4 class="lead">Web dibuat oleh M.Fathin Halim</h4>
+              <button
+                id="toggle"
+                class="btn btn-primary"
+                onclick="cursorToggle()"
+              >
+                Matikan Custom Cursor
+              </button>
+            </div>
+            <img
+              class="mb-3 mt-3 col-sm-5"
+              src="https://25.media.tumblr.com/821bc5de52b84a08a2c701bdcd5215ac/tumblr_mpf9wbWzYN1s7itpyo1_400.gif"
+              style="max-width: 100%; width: 340px; height: fit-content"
+            />
+          </div>
+
+          <hr class="my-4" />
+        </div>
+      </header>
+      <div class="d-lg-flex">
+        <div class="flex-grow-1">
+          <h2 class="yellow-text">Apa Itu Javascript?</h2>
+          <p>
+            Javascript adalah sebuah bahasa pemograman yang dibuat oleh Brendan
+            Eich untuk digunakan pada web
+          </p>
+          <h2 class="yellow-text">Kenapa Javascript?</h2>
+          <ul>
+            <li>Karena Dia merupakan High Level Programming Langguage</li>
+            <li>Karena Mudah dipahami pemula</li>
+            <li>Karena memiliki fitur yang banyak</li>
+            <li>Dapat digunakan pada cross-development</li>
+          </ul>
+          <h2 class="yellow-text">Bagaimana caranya?</h2>
+          <p>Bagaimana cara kita menggunakan Javascript?</p>
+          <img
+            class="mt-3 mb-3"
+            style="width: 400px; max-width: 100%"
+            src="https://www.pngitem.com/pimgs/m/595-5956089_transparent-happy-anime-girl-png-happy-png-anime.png
+          "
+          />
+          <h3 class="pt-2 pb-2 yellow-text">Contoh Kode pada HTML</h3>
+          <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt; 
+  &lt;script&gt; console.log("Hello World"); &lt;/script&gt; 
+  &lt;/body&gt;
+
+&lt;/html&gt;
+          </code></pre>
+          <p>
+            kita bedah, di kode diatas terdapat kode html. Untuk menjalankan
+            javascript, terdapat pada tag &lt;script&gt;. di dalam situ terdapat
+            'console.log('hello world');'. coba jalankan kode tersebut pada
+            editor anda dan lihat hasilnya pada dev mode browser anda!
+          </p>
+          <h3 class="pt-2 pb-2 yellow-text">
+            Itu keren.. tapi katanya bisa diluar browser?
+          </h3>
+          <p>
+            Iya, sekarang Javascript bisa dijalankan diluar browser berkat tools
+            seperti NodeJS atau BunJS!
+          </p>
+          <p>Cara Menggunakan Node:</p>
+          <ul>
+            <li>
+              1. Download Node di <a href="https://nodejs.org/en">sini</a>
+            </li>
+            <li>2. Setelah itu, buatlah file index.js</li>
+            <li>
+              3. Bukalah directory index.js tersebut di terminal dan jalankan
+              "node index.js"
+            </li>
+          </ul>
+          <h2 class="yellow-text">Selanjut apa sih?</h2>
+          <p>
+            Seperti yang kita bahas, kita sudah menjalankan kode javascript
+            dengan tag dan file index.js
+          </p>
+          <p>
+            di dalam script tersebut, kita menggunakan console.log("hello
+            world");
+          </p>
+          <p>
+            kode digunakan untuk menampilkan sesuatu di terminal. Contoh lain
+            seperti print("hello world") pada python!
+          </p>
+          <h3 class="pt-2 pb-2 yellow-text">Variable</h3>
+          <p>
+            Di javascript, ada beberapa cara untuk mendeklarasikan Variable.
+            seperti
+          </p>
+          <ul>
+            <li>
+              <pre><code>let nama = "Fathin";</code></pre>
+              menggunakan let. Ini adalah cara mendeklarasikan variable pada
+              javascript yang paling sering di gunakan dan dijumpai
+            </li>
+            <li>
+              <pre><code>const nama = "Fathin";</code></pre>
+              const digunakan untuk membuat variable yang bertipe constan. Tidak
+              dapat dideklarasikan lagi setelah dideklarasikan
+            </li>
+            <li>
+              <pre><code>var nama = "Fathin";</code></pre>
+              var adalah tipe deklarasi variable yang jarang digunakan, karena
+              var biasanya tidak menampilkan error ketika terdapat error.
+              Berbeda dengan let yang langsung menampilkannya
+            </li>
+          </ul>
+          <h3 class="pt-2 pb-2 yellow-text">Array</h3>
+          <p>
+            Array adalah variable yang spesial, karena dapat menyimpan lebih
+            dari 1 data
+          </p>
+          <h4>Kenapa array?</h4>
+          <p>
+            Karena kita tidak perlu mendeklarasikan berbagai variable lagi hanya
+            untuk data yang yang sejenis saja
+          </p>
+          <h4>Contoh kode</h4>
+          <pre><code>const array_name = [item1, item2, ...];</code></pre>
+          <h3 class="pt-2 pb-2 yellow-text">Function</h3>
+          <p>
+            Fungsi dalam Javascript agak sedikit berbeda dari beberapa
+            kebanyakan bahasa pemograman lainnya. Dikarenakan fungsi dalam
+            javascript berupa object sehingga dapat di define dengan variabel
+          </p>
+          <h4>Jadi fungsi itu apa sih?</h4>
+          <p>
+            Fungsi adalah kode blok untuk melakukan suatu tugas yang kita
+            berikan yang dapat digunakan ketika fungsi tersebut dipanggil saja.
+            Hal ini berfungsi agar kita dapat KIS (Keep It Simple) dan DRY
+            (Don't Repeat Yourself).
+          </p>
+          <h4>Contoh kode</h4>
+          <pre><code>
+//contoh fungsi biasa
+function hello(nama) {
+    return `Halo ${nama}`;
+}
+console.log(hello("Fathin")); //output: Halo Fathin
+
+//contoh fungsi dengan variable
+let tambah = (num1, num2) => {
+    return num1 + num2;
+}
+console.log(tambah(3, 5)); //output: 8
+          </code></pre>
+        </div>
+        <div
+          class="card bg-dark"
+          style="width: 45rem; max-width: 100%; height: fit-content"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+            class="card-img-top"
+            style="border-radius: 0 !important"
+            alt="..."
+          />
+          <div class="card-body">
+            <h3 class="card-title">Javascript</h3>
+            <p class="card-text">Masih kesulitan? bisa tanya di discord ya:)</p>
+            <a
+              href="https://discordapp.com/users/1156486226094870569"
+              class="btn btn-primary yellow-bg text-black"
+              >Chat</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="row pt-4 pb-4">
+        <div class="col-sm-8">
+          <h1 class="yellow-text">Ada apa lagi sih dari javascript?</h1>
+          <p>
+            Ada banyak sekali, teman-teman bisa melihat di w3school,
+            geekforgeeks dan berbagai media sosial untuk hal lain pada
+            javascript, seperti framework React, Angular. TypeScript yang
+            merupakan Upgrade dari Javascript dengan tipe data. Dan berbagai hal
+            lainnya!
+          </p>
+        </div>
+        <img
+          style="max-width: 100%; object-fit: cover"
+          src="https://i0.wp.com/tokyotreatblog.wpcomstaging.com/wp-content/uploads/2021/05/tokyotreat2F15d47c19-f8b2-40e7-82f0-9d3ff52c731f_lucky-star-and-my-life-03.gif?w=620&ssl=1"
+          class="mt-3 mb-3 col-sm-4"
+        />
+      </div>
+      <div class="text-center">
+        <div class="p-5">
+          <h3 class="card-title mb-3">Terima kasih telah membaca!</h3>
+          <p class="card-text">
+            Terima kasih banyak telah membaca web saya! Silahkan mengunjungi
+            website saya untuk melihat project project yang telah saya bikin
+            sebelumya :D
+          </p>
+          <a href="https://fathin.my.id" class="btn btn-primary"
+            >Website M.Fathin Halim</a
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      const cursorElement = document.getElementById("cursor");
+      const toggle = document.getElementById("toggle");
+
+      let customCursor = localStorage.getItem("cc");
+      if (!customCursor) {
+        customCursor = 1;
+        localStorage.setItem("cc", 1);
+      }
+      if (customCursor == 1) {
+        cursorElement.style.display = "fixed";
+        toggle.innerHTML = "Matikan Custom Cursor";
+      } else if (customCursor == 0) {
+        cursorElement.style.display = "none";
+        toggle.innerHTML = "Hidupkan Custom Cursor";
+      }
+
+      function cursorToggle() {
+        if (customCursor == 1) {
+          cursorElement.style.display = "none";
+          customCursor = 0;
+          localStorage.setItem("cc", 0);
+          toggle.innerHTML = "Hidupkan Custom Cursor";
+        } else if (customCursor == 0) {
+          cursorElement.style.display = "block";
+          customCursor = 1;
+          localStorage.setItem("cc", 1);
+          toggle.innerHTML = "Matikan Custom Cursor";
+        }
+      }
+
+      let nav = document.getElementById("nav");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY == 0) {
+          nav.classList.remove("bg-black");
+        } else {
+          nav.classList.add("bg-black");
+        }
+      });
+
+      function removeCarElementsOnMobile() {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          try {
+            if (cursorElement) {
+              cursorElement.parentNode.removeChild(cursorElement); // Remove cursor2Element
+            }
+          } catch {
+            console.log("Made By M.Fathin Halim");
+          }
+        }
+      }
+      window.onmousemove = function (e) {
+        //cursor.style.left = e.clientX + "px";
+        //cursor.style.top = e.clientY + "px";
+        cursorElement.animate(
+          {
+            left: `${e.clientX}px`,
+            top: `${e.clientY}px`,
+          },
+          { duration: 3000, fill: "forwards" }
+        );
+      };
+
+      window.addEventListener("load", removeCarElementsOnMobile);
+      window.addEventListener("resize", removeCarElementsOnMobile);
+    </script>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"
+  ></script>
+</html>
